@@ -1,0 +1,22 @@
+{
+  "name": "blue",
+  "version": "1.0.0",
+  "description": "A project I made for studying at LaunchSchool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexletayf/blue.git"
+  },
+  "author": "Alejandro Muñoz Letayf (alexletayf@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexletayf/blue/issues"
+  },
+  "homepage": "https://github.com/alexletayf/blue#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
