@@ -1,4 +1,4 @@
-let text = "There is an itch on my back that I can´t scratch."
+let text = "There is an itch on my back that I can´t scratch.";
 
 function logInBox(str) {
   let lengthDash = str.length;
