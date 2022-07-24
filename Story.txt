@@ -1,5 +1,0 @@
-So I thought of making this TXT file to understand how git works. This is the first paragraph. Let's get started.
-
-I will stage this change on my local machine and then I'll push it to my remote repository on Github. After that I'll do two different commits on local and then I'll push them again to my remote repository on Github just to see what happens.
-
-I am curious to see if when I push to Github the commit will take the name of the message or it will take the name of my two local commits. Also I would like to understand if there is a difference between pushing and committing.
