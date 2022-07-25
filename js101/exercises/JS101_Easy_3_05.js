@@ -1,13 +1,7 @@
-function triangle(height) {
-  let spaces = height - 1;
-  let stars = 1;
-
-  do {
-    console.log(`${' '.repeat(spaces)}${'*'.repeat(stars)}`);
-    spaces--;
-    stars++;
-    height--;
-  } while (height > 0);
+function triangle(sides) {
+  for (let blanks = sides; blanks >= 0; blanks--) {
+      console.log(`${' '.repeat(blanks)}${'*'.repeat(sides - blanks)}`);
+  }
 }
 
 triangle(5);
