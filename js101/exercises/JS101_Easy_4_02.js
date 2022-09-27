@@ -15,8 +15,8 @@ if (numbers.includes(lastNumber)) {
   console.log(`The number ${lastNumber} appears in ${numbers[0]}, ${numbers[1]},\
   ${numbers[2]}, ${numbers[3]}, ${numbers[4]}.`);
 } else {
-   console.log(`The number ${lastNumber} does not appear in ${numbers[0]}, ${numbers[1]},\
-  ${numbers[2]}, ${numbers[3]}, ${numbers[4]}.`);
+  console.log(`The number ${lastNumber} does not appear in ${numbers[0]}, \
+  ${numbers[1]}, ${numbers[2]}, ${numbers[3]}, ${numbers[4]}.`);
 }
 
 //Further Exploration
