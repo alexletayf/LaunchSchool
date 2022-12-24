@@ -10,9 +10,9 @@ let obj2 = { first: { d: 3 }, second: { e: 2, f: 1 }, third: { g: 0 }};
 
 console.log(arr1[2][1][3]);
 
-console.log(arr2[2]['third'][0]);
+console.log(arr2[1]['third'][0]);
 
-console.log(arr3[2]['third'][0]);
+console.log(arr3[2]['third'][0][0]);
 
 console.log(obj1['b'][1]);
 
