@@ -12,9 +12,15 @@ outputs a string representing the time in "hh:mm" format
   input = number integer
   output= string with "hh:mm" format
 */
+function convertPositiveIntegerToTimeString(integer) {
+  let input = integer;
+  let horas = String(Math.floor(input / 60) % 24);
+  let minutos = String(input % 60);
 
-function convertIntegerToTime(integer) {
+  return `${horas.padStart(2,0)}:${minutos.padStart(2,0)}`
+}
 
+function convertNegativeIntegerToTimeString(integer) {
   let input = Math.abs(integer);
   let horas = Math.floor(input / 60) % 24;
   let minutos = input % 60;
@@ -37,13 +43,22 @@ function convertIntegerToTime(integer) {
   minutos = String(minutos);
 
   return `${horas.padStart(2,0)}:${minutos.padStart(2,0)}`;
+} 
+
+function convertIntegerToTimeString(integer) {
+  if (integer >= 0) {
+    return convertPositiveIntegerToTimeString(integer);
+  } else {
+    return convertNegativeIntegerToTimeString(integer);
+  }
 }
 
-console.log(convertIntegerToTime(0),'00:00');
-console.log(convertIntegerToTime(1),'00:01');
-console.log(convertIntegerToTime(10),'23:50');
-console.log(convertIntegerToTime(60),'23:00');
-console.log(convertIntegerToTime(65),'22:55');
-console.log(convertIntegerToTime(1440),'00:00');
-console.log(convertIntegerToTime(500),'23:00');
-console.log(convertIntegerToTime(1505),'22:50');
+
+
+
+
+console.log(convertIntegerToTimeString(0), "00:00");
+console.log(convertIntegerToTimeString(1), "00:01");
+console.log(convertIntegerToTimeString(-1), "23:59");
+console.log(convertIntegerToTimeString(1445), "00:05");
+console.log(convertIntegerToTimeString(-1445), "23:55");
