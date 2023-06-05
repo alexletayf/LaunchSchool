@@ -6,4 +6,4 @@ function logInBox(str) {
   console.log(`+-${'-'.repeat(str.length)}-+`);
 }
 
-logInBox('Hello, World!');
+logInBox(`Hello, Ruben!!`);

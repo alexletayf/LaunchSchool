@@ -13,57 +13,37 @@ outputs a string representing the time in "hh:mm" format
   output= string with "hh:mm" format
 */
 
-function hoursToStrPositive(time) {
-  if ((time % 60) <= 1) {
-    return "00"
+function convertIntegerToTime(integer) {
+
+  let input = Math.abs(integer);
+  let horas = Math.floor(input / 60) % 24;
+  let minutos = input % 60;
+
+  if ((60 - minutos === 60) && (23 - horas === 23)) {
+    horas = 0;
+  } else if (60 - minutos === 60) {
+    horas = 23 - horas + 1;
   } else {
-    let totalHours = time / 60;
-
-    let hoursBeforeMidnight = 0;
-
-    for (let idx = totalHours; idx > 0; idx--) {
-      if (hoursBeforeMidnight < 0) {
-        hoursBeforeMidnight = 24;
-      } else {
-        hoursBeforeMidnight--;
-      }
-    }
-    return String(hoursBeforeMidnight).padStart(2,"0");
-  }
-}
-
-function hoursToStrNegative(time) {
-  if ((Math.abs(time) % 60) <= 1) {
-    return "00"
-  } else {
-    let totalHours = Math.abs(time) / 60;
-
-    let hoursAfterMidnight = 0;
-
-    for (let idx = 0; idx < totalHours; idx++) {
-      if (hoursAfterMidnight > 24) {
-        hoursAfterMidnight = 0;
-      } else {
-        hoursAfterMidnight++;
-      }
-    }
-    return String(hoursAfterMidnight).padStart(2,"0");
-  }
-}
-
-
-
-function timeOfDay(time) {
-  let strMinutes = String((Math.abs(time) % 60)).padStart(2,"0");
-  let strHours = "";
-
-  if (time >= 0) {
-    strHours = hoursToStrPositive(time);
-  } else {
-    strHours = hoursToStrNegative(time);
+    horas = 23 - horas;
   }
 
-  return strHours + ":" + strMinutes;
+  if (60 - minutos === 60) {
+    minutos = 0;
+  } else {
+    minutos = 60 - minutos;
+  }
+
+  horas = String(horas);
+  minutos = String(minutos);
+
+  return `${horas.padStart(2,0)}:${minutos.padStart(2,0)}`;
 }
 
-console.log(timeOfDay(-1441));
+console.log(convertIntegerToTime(0),'00:00');
+console.log(convertIntegerToTime(1),'00:01');
+console.log(convertIntegerToTime(10),'23:50');
+console.log(convertIntegerToTime(60),'23:00');
+console.log(convertIntegerToTime(65),'22:55');
+console.log(convertIntegerToTime(1440),'00:00');
+console.log(convertIntegerToTime(500),'23:00');
+console.log(convertIntegerToTime(1505),'22:50');
