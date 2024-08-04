@@ -7,6 +7,6 @@ function leadingSubstrings(text) {
   return rtnArr;
 }
 
-const sample = 'ABC';
+const sample = 'ABCD';
 
 console.log(leadingSubstrings(sample));

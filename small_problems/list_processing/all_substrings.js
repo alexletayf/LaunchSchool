@@ -1,19 +1,19 @@
-function leadingSubstrings(text) {
-  let rtnArr = [];
-  let textArr = text.split('');
-  for (let i = 1; i < text.length + 1; i++) {
-      rtnArr.push(text.slice(0,i));
+function leadingSubstrings(txtInput) {
+  let arrSubstrings = [];
+  for (let idx = 1; idx <= txtInput.length; idx++) {
+    let substring = txtInput.slice(0, idx);
+    arrSubstrings.push(substring);
   }
-  return rtnArr;
+  return arrSubstrings;
 }
 
-function substrings(text) {
-  let txtArr = text.split('');
-  let rtnArr = [];
-  for (let i = 0; i < text.length; i++ ) {
-    rtnArr.push(txtArr.slice(i, txtArr.length));
+function substrings(txtInput) {
+  let arrSubstrings = [];
+  for (let idx = 0; idx <= txtInput.length; idx++) {
+    let substring = leadingSubstrings(txtInput.slice(idx, txtInput.length));
+    arrSubstrings.push(substring);
   }
-  return rtnArr;
+  return arrSubstrings;
 }
 
-console.log(substrings('hello'));
+console.log(substrings('abcde'));
