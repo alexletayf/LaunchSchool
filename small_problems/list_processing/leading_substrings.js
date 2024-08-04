@@ -1,10 +1,10 @@
-function leadingSubstrings(text) {
-  let rtnArr = [];
-  let textArr = text.split('');
-  for (let i = 1; i < text.length + 1; i++) {
-      rtnArr.push(text.slice(0,i));
+function leadingSubstrings(txtInput) {
+  let arrSubstrings = [];
+  for (let idx = 1; idx <= txtInput.length; idx++) {
+    let substring = txtInput.slice(0, idx);
+    arrSubstrings.push(substring);
   }
-  return rtnArr;
+  return arrSubstrings;
 }
 
 const sample = 'ABCD';
